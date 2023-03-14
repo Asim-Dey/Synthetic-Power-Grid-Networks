@@ -13,13 +13,7 @@ library(EnvStats)
 
 ##############################IEEE 300 Bus system ##############################
 
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-Data_IEEE300<-read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-
-
-
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
+Data_IEEE300<-read.csv("IEEE 300 Bus.csv",header=TRUE)
 
 
 #-----Remove duplicity -----------------------------------------------------------
@@ -134,7 +128,7 @@ M0<-c(m1[4],m2[8],m2[9],m2[10]);M0
 #################################### eNN ################################################
 
 
-G2 <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/Test_IEEE118_eNN_Motifs.txt", header=FALSE)[1:2000,]
+G2 <- read.table("Test_IEEE118_eNN_Motifs.txt", header=FALSE)[1:2000,]
 names(G2)<-c('nodes','edges','Diameter','AVPL','triangles','square','k13','tent','kite','k4')
 
 head(G2)
@@ -309,14 +303,6 @@ UQA<-round(c(UQ_AVPL11,UQ_Dim11,UQ_T2,UQ_V3,UQ_V4,UQ_V5),3)
 
 
 data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=LQA,'UL'=UQA) 
-
-#     Stat    Observed  Mean        s     Zm     LL    UL
-#     AVPL    9.935   5.10878  0.2752473 17.535 -1.703 2.257
-# Diameter   24.000  11.08900  1.1509741 11.217 -1.815 2.529
-#       T2   34.000  88.23450 13.4695666 -4.026 -1.799 2.136
-#       V3  187.000 445.52850 88.8356070 -2.910 -1.661 2.223
-#       V4   30.000  20.86500  6.8486661  1.334 -1.586 2.210
-#       V5   14.000  78.92500 20.6111325 -3.150 -1.646 2.187
 
 
 
@@ -332,7 +318,7 @@ data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=
 #################################### CLC 1 param ################################################
 
 
-G2 <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/Test_IEEE300_1parar_Motifs.txt", header=FALSE)
+G2 <- read.table("Test_IEEE300_1parar_Motifs.txt", header=FALSE)
 names(G2)<-c('nodes','edges','Diameter','AVPL','triangles','square','k13','tent','kite','k4')
 
 head(G2)
@@ -507,28 +493,6 @@ UQA<-round(c(UQ_AVPL11,UQ_Dim11,UQ_T2,UQ_V3,UQ_V4,UQ_V5),3)
 
 
 data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=LQA,'UL'=UQA) 
-
-
-#     Stat Observed      Mean          s     Zm     LL    UL
-#     AVPL    9.935  11.49294  0.9990593 -1.559 -1.474 1.649
-# Diameter   24.000  29.76450  4.2326112 -1.362 -1.598 1.709
-#       T2   34.000  34.79950  6.8463666 -0.117 -1.870 1.928
-#       V3  187.000 169.18750 33.2177069  0.536 -1.842 1.891
-#       V4   30.000  22.35450  5.7460716  1.331 -1.454 2.027
-#       V5   14.000  13.17250  4.9035463  0.169 -1.871 2.616
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -540,7 +504,7 @@ data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=
 #################################### CLC 2 param ################################################
 
 
-G2 <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/Test_IEEE300_2parar_Motifs.txt", header=FALSE)
+G2 <- read.table("Test_IEEE300_2parar_Motifs.txt", header=FALSE)
 names(G2)<-c('nodes','edges','Diameter','AVPL','triangles','square','k13','tent','kite','k4')
 
 head(G2)
@@ -717,30 +681,13 @@ UQA<-round(c(UQ_AVPL11,UQ_Dim11,UQ_T2,UQ_V3,UQ_V4,UQ_V5),3)
 data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=LQA,'UL'=UQA) 
 
 
-#      Stat   Observed  Mean        s       Zm     LL    UL
-#     AVPL    9.935  9.173345  0.6282212 1.213 -1.645 1.777
-# Diameter   24.000 23.282500  3.0105191 0.238 -1.755 1.567
-#       T2   34.000 20.494500  4.5450301 2.971 -1.869 2.091
-#       V3  187.000 99.296500 22.5168624 3.895 -1.878 2.074
-#       V4   30.000 13.925500  4.4033674 3.651 -1.800 2.288
-#       V5   14.000  6.207500  3.1789144 2.451 -1.638 2.137
-
-
-
-
 
 #######################################################################################
 #################################### GeoDe ################################################
 
-GG1 <- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/IEEE300_6000.txt", header=FALSE)
-GG2 <- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/IEEE300_6000B.txt", header=FALSE)
-GG3 <- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/IEEE300_6000C.txt", header=FALSE)
-
-
-
-GG1 <- read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/IEEE300_6000.txt", header=FALSE)
-GG2 <- read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/IEEE300_6000B.txt", header=FALSE)
-GG3 <- read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/IEEE300_6000C.txt", header=FALSE)
+GG1 <- read.csv("IEEE300_6000.txt", header=FALSE)
+GG2 <- read.csv("IEEE300_6000B.txt", header=FALSE)
+GG3 <- read.csv("IEEE300_6000C.txt", header=FALSE)
 
 
 
@@ -753,8 +700,6 @@ names(G2)<-c("m", "t","nodes", "edges", "vee", "triangles", "path3", "square",
 head(G2)
 dim(G2)
 
-#write.csv(dd,"C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/A/Data/ER_Italy.csv")
-
 
 
 #############################################################################################
@@ -924,14 +869,6 @@ UQA<-round(c(UQ_AVPL11,UQ_Dim11,UQ_T2,UQ_V3,UQ_V4,UQ_V5),3)
 
 data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=LQA,'UL'=UQA) 
 
-
-#     Stat Observed       Mean          s     Zm     LL    UL
-#     AVPL    9.935   8.870963  0.6390423  1.666 -1.586 2.279
-# Diameter   24.000  20.980500  2.5497785  1.184 -1.561 2.361
-#       T2   34.000  34.398500  6.9872103 -0.057 -1.918 1.947
-#       V3  187.000 181.258000 42.1250483  0.136 -1.763 2.107
-#       V4   30.000  26.247000  7.0061069  0.536 -1.748 2.106
-#       V5   14.000   9.383000  4.4525525  1.037 -1.658 2.160
 
 
 
@@ -1159,34 +1096,6 @@ UQA<-round(c(UQ_AVPL11,UQ_Dim11,UQ_T2,UQ_V3,UQ_V4,UQ_V5),3)
 
 data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=LQA,'UL'=UQA) 
 
-
-
-
-
-############ ER ###################
-
-#      Stat Observed      Mean          s     Zm     LL    UL
-#     AVPL    9.935  5.509419  0.1317760 33.587 -1.890 2.001
-# Diameter   24.000 12.689500  1.0911852 10.365 -1.548 2.117
-#       T2   34.000  3.393500  1.9108855 16.017 -1.776 2.411
-#       V3  187.000 26.881500 16.0045159 10.005 -1.680 2.319
-#       V4   30.000  6.703500  2.7031910  8.618 -1.740 1.959
-#       V5   14.000  0.119500  0.3637113 38.164 -0.329 2.421
-
-
-
-
-  
-
-############ PA ###################
-
-#     Stat Observed      Mean          s     Zm     LL    UL
-#     AVPL    9.935   5.08595  0.1058569 45.811 -1.915 1.958
-# Diameter   24.000  11.95950  0.9681572 12.437 -2.024 2.108
-#       T2   34.000  14.39500  3.5951965  5.453 -1.779 2.115
-#       V3  187.000 301.47900 85.9268367 -1.332 -1.728 2.136
-#       V4   30.000  35.54950  7.3656416 -0.753 -1.840 2.233
-#       V5   14.000   8.15850  5.0773288  1.151 -1.410 2.332
 
 
 
