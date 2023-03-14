@@ -5,11 +5,8 @@ library(EnvStats)
 
 
 ##############################IEEE 300 Bus system ##############################
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-Data_IEEE300<-read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
+Data_IEEE300<-read.csv("IEEE 300 Bus.csv",header=TRUE)
+source('Pref_at_G.R')
 
 #-----Remove duplicity -----------------------------------------------------------
 Edge_no_dup=unique(Data_IEEE300[,c(1,2)])
@@ -87,7 +84,7 @@ degree_Germany
 
 ####################################################################################################
 
-CLC10 <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Python/Poisson simulated data/IEEE300_PoissonNN_10.txt",header=TRUE)
+CLC10 <- read.table("IEEE300_PoissonNN_10.txt",header=TRUE)
 
 CLC10<-as.matrix(CLC10)+1 # few nodes have level 0; changing them t 1
 
