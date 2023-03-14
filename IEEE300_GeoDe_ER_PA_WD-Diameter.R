@@ -10,14 +10,8 @@ library(TDA)
 ##############################IEEE 300 Bus system ##############################
 
 
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-#Data_IEEE300<-read.csv("C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-
-
-
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-
+Data_IEEE300<-read.csv("IEEE 300 Bus.csv",header=TRUE)
+source('Pref_at_G.R')
 
 #-----Remove duplicity -----------------------------------------------------------
 Edge_no_dup=unique(Data_IEEE300[,c(1,2)])
@@ -94,9 +88,6 @@ summary(as.numeric(A2))
 
 #=============================================================================
 
-setwd("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Current/")
-
-
 ### Check matrix/weight values i.e., summary
 
 cap=2# dimension cap
@@ -160,14 +151,12 @@ PD=P
 #######################################################################################
 #################################### poisNN ################################################
 
-edge_list<-read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Python/Poisson simulated data/IEEE300_PoissonNN_4.txt",header=TRUE)
+edge_list<-read.table("IEEE300_PoissonNN_4.txt",header=TRUE)
 
 
 
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
-
 G1<-graph_from_edgelist(ED,directed = FALSE)
-
 igraph.options(vertex.size=2, vertex.color='black', edge.width=1, edge.color='gray',edge.arrow.size=0.9,
                vertex.label=NA)#vertex.label=NA
 plot(G1)
@@ -274,35 +263,16 @@ PD
 
 WD <- wasserstein(PD, P_GD, dimension = c(0,1))
 WD
-
-#Diameter: 14.2381, 14.2381, 14.3281,  13.432, 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 #######################################################################################
 #################################### CLC  ################################################
 
-edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Python/CLC simulated data/N_IEEE300_7.txt",header=TRUE)
+edge_list <- read.table("N_IEEE300_7.txt",header=TRUE)
 
 
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
-
 G1<-graph_from_edgelist(ED,directed = FALSE)
 
 igraph.options(vertex.size=2, vertex.color='black', edge.width=1, edge.color='gray',edge.arrow.size=0.9,
@@ -411,34 +381,6 @@ PD
 
 WD <- wasserstein(PD, P_GD, dimension = c(0,1))
 WD
-
-
-##########################################################################################
-# Two Parameters
-#  26.2619, 33.54762,37.2619, 32.54762, 35.45238, 27.85714, 29.40476, 
-
-
-
-
-# One Parameter
-# 37.21429, 36.7619,40.85714,35.61905,40.35714
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -446,9 +388,7 @@ WD
 #################################### GeoDe ################################################
 
 
-edge_list <- read.table("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE300_1.txt")
-edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE300_8.txt")
-
+edge_list <- read.table("edgelistIEEE300_1.txt")
 
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
 
@@ -481,13 +421,6 @@ summary(as.numeric(AA1))
 #######################################  TDA ################################################
 
 
-
-setwd("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B")
-#setwd("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B")
-
-
-
-
 AA1<-as.matrix(AA1)
 AA1[!is.finite(AA1)] <- 999
 
@@ -518,8 +451,6 @@ cat(A2,file='M.txt',append = T)
 #-------------------------------------------------------------------
 
 system('perseusWin.exe distmat M.txt Moutput')
-
-
 betti_data=as.matrix(read.table('Moutput_betti.txt'))
 
 
@@ -567,11 +498,6 @@ PD
 WD <- wasserstein(PD, P_GD, dimension = c(0,1))
 WD
 
-
-
-# 10.81818,13.04545, 11.72727, 14.54545, 12.63636
-
-## B:  13.02381, 11.61905, 14.52381, 11.61905, 13.04762,  
 
 
 
@@ -614,14 +540,6 @@ summary(as.numeric(AA1))
 ######################################################################################
 #######################################################################################
 #######################################  TDA ################################################
-
-
-
-setwd("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B")
-#setwd("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B")
-
-
-
 
 AA1<-as.matrix(AA1)
 AA1[!is.finite(AA1)] <- 999
@@ -699,13 +617,6 @@ P_ER
 
 WD <- wasserstein(PD, P_ER, dimension = c(0,1))
 WD
-
-# ER: 10.36364, 13.63636, 10.90909, 16.36364, 15.27273
-# PA: 3.227273, 2.863636, 3.272727, 3.136364
-
-
-# ER B: 24.2381, 23.28571, 21.85714, 22.80952, 24.2381
-# PA B: 14.2381, 14.2381, 14.2381, 14.2381, 14.2381
 
 
 
