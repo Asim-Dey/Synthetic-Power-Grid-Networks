@@ -4,20 +4,12 @@ library(NetSwan)
 
 ##############################Italian Power Grid system ##############################
 
-
-
-
-data11 <- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/Export_Output22.csv")
-data11 <- read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/Export_Output22.csv")
-
-
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
+data11 <- read.csv("Export_Output22.csv")
+source('Pref_at_G.R')
 
 
 nodes_Italy<-data11[,c(2,3,4)][data11[,5]=="Italy",]
 
-#write.csv(nodes_Italy,"C:/Users/akd130230/Dropbox/Power Grid Network/Data from author/processed/Italy_nodes.csv")
 
 ID_Italy<-data11[,2][data11[,5]=="Italy"]
 
@@ -26,7 +18,6 @@ ID_Italy<-data11[,2][data11[,5]=="Italy"]
 #Italy<-data11[(data11[,17] %in% ID_Italy) & (data11[,18] %in% ID_Italy)  , ]
 
 Italy<-data11[(data11[,17] %in% ID_Italy) | (data11[,18] %in% ID_Italy)  , ] # or
-#write.csv(Italy,"C:/Users/akd130230/Dropbox/Power Grid Network/Data from author/processed/Italy_edge.csv")
 
 Italy_data_all<-Italy[,c(16,17,18)]
 
