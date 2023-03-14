@@ -4,19 +4,19 @@ library(igraph)
 library(NetSwan)
 
 
-data11 <- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/Export_Output22.csv")
-data11 <- read.csv("C:/Users/adey/OneDrive//Synthentic Network/Random Graph Model/R codes/2020/Old/Data/Export_Output22.csv")
+data11 <- read.csv("Export_Output22.csv")
+data11 <- read.csv("Export_Output22.csv")
 
 
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/adey/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
+source('Pref_at_G.R')
+source('Pref_at_G.R')
 
 
 ##############################German Grid##############################
 
 nodes_Germany<-data11[,c(2,3,4)][data11[,5]=="Germany",] 
 length(nodes_Germany$X)
-#write.csv(nodes_Germany,"C:/Users/akd130230/Dropbox/Power Grid Network/Data from author/processed/Germany_nodes.csv")
+#write.csv(nodes_Germany,"Germany_nodes.csv")
 
 ID_Germany<-data11[,2][data11[,5]=="Germany"]
 
@@ -26,7 +26,7 @@ ID_Germany<-data11[,2][data11[,5]=="Germany"]
 #Germany<-data11[(data11[,17] %in% ID_Germany) & (data11[,18] %in% ID_Germany)  , ] # Germany edge with distance
 
 Germany<-data11[(data11[,17] %in% ID_Germany) | (data11[,18] %in% ID_Germany)  , ] # or
-#write.csv(Germany,"C:/Users/akd130230/Dropbox/Power Grid Network/Data from author/processed/Germany_edge.csv")
+#write.csv(Germany,"Germany_edge.csv")
 
 Germany_data_all<-Germany[,c(16,17,18)]
 
@@ -140,8 +140,8 @@ M0<-c(m1[4],m2[8],m2[9],m2[10]);M0
 #################################### eNN ################################################
 
 
-G2 <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/Test_Germany_eNN_Motifs.txt", header=FALSE)[1:2000,]
-G2 <- read.table("C:/Users/adey/OneDrive/Synthentic Network/Random Graph Model/Data/Test_Germany_eNN_Motifs.txt", header=FALSE)[1:2000,]
+G2 <- read.table("Test_Germany_eNN_Motifs.txt", header=FALSE)[1:2000,]
+G2 <- read.table("Test_Germany_eNN_Motifs.txt", header=FALSE)[1:2000,]
 
 names(G2)<-c('nodes','edges','Diameter','AVPL','triangles','square','k13','tent','kite','k4')
 
@@ -318,14 +318,6 @@ UQA<-round(c(UQ_AVPL11,UQ_Dim11,UQ_T2,UQ_V3,UQ_V4,UQ_V5),3)
 
 data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=LQA,'UL'=UQA) 
 
-
-#    Stat   Observed    Mean           s      Zm     LL    UL
-#     AVPL   11.989    7.62529   0.2677859  16.294 -1.924 1.735
-# Diameter   31.000   16.39050   1.1487687  12.718 -2.951 1.401
-#       T2   29.000  231.05300  18.6603938 -10.828 -2.468 1.444
-#       V3  165.000 1123.57200 126.6197777  -7.570 -2.042 1.567
-#       V4   22.000   53.02200  11.0334212  -2.812 -2.540 1.720
-#       V5    9.000  169.38400  25.8283584  -6.210 -2.260 1.727
 
 
 
@@ -335,8 +327,8 @@ data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=
 #################################### CLC 1 param ################################################
 
 
-G2 <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/Test_Germany_1parar_Motifs.txt", header=FALSE)
-G2 <- read.table("C:/Users/adey/OneDrive/Synthentic Network/Random Graph Model/Data/Test_Germany_1parar_Motifs.txt", header=FALSE)
+G2 <- read.table("Test_Germany_1parar_Motifs.txt", header=FALSE)
+G2 <- read.table("Test_Germany_1parar_Motifs.txt", header=FALSE)
 
 names(G2)<-c('nodes','edges','Diameter','AVPL','triangles','square','k13','tent','kite','k4')
 
@@ -513,13 +505,6 @@ UQA<-round(c(UQ_AVPL11,UQ_Dim11,UQ_T2,UQ_V3,UQ_V4,UQ_V5),3)
 
 data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=LQA,'UL'=UQA) 
 
-#     Stat   Observed   Mean      s        Zm     LL    UL
-#     AVPL   11.989  13.87087  1.252714 -1.502 -1.342 1.660
-# Diameter   31.000  36.18050  5.381301 -0.963 -1.706 1.639
-#       T2   29.000  57.08700  9.727371 -2.887 -1.962 2.253
-#       V3  165.000 286.86300 46.829560 -2.602 -1.855 1.690
-#       V4   22.000  37.27100  7.661521 -1.993 -1.732 2.314
-#       V5    9.000  25.28150  8.059264 -2.020 -1.648 2.447
 
 
 
@@ -536,8 +521,8 @@ data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=
 #################################### CLC 2 param ################################################
 
 
-G2 <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/Test_Germany_2parar_Motifs.txt", header=FALSE)
-G2 <- read.table("C:/Users/adey/OneDrive/Synthentic Network/Random Graph Model/Data/Test_Germany_2parar_Motifs.txt", header=FALSE)
+G2 <- read.table("Test_Germany_2parar_Motifs.txt", header=FALSE)
+G2 <- read.table("Test_Germany_2parar_Motifs.txt", header=FALSE)
 
 names(G2)<-c('nodes','edges','Diameter','AVPL','triangles','square','k13','tent','kite','k4')
 
@@ -714,14 +699,6 @@ UQA<-round(c(UQ_AVPL11,UQ_Dim11,UQ_T2,UQ_V3,UQ_V4,UQ_V5),3)
 
 data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=LQA,'UL'=UQA) 
 
-#   Stat     Observed   Mean      s       Zm     LL    UL
-#     AVPL   11.989  10.90248  0.8666369 1.253 -1.503 1.647
-# Diameter   31.000  28.06950  3.9704599 0.738 -1.781 1.746
-#       T2   29.000  25.46250  5.1655528 0.685 -1.832 2.040
-#       V3  165.000 129.10450 26.7020613 1.344 -1.802 2.131
-#       V4   22.000  18.75550  4.9244131 0.659 -1.778 2.085
-#       V5    9.000   7.29050  3.4791036 0.491 -1.808 2.216
-
 
 
 
@@ -735,12 +712,12 @@ data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=
 #######################################################################################
 #################################### GeoDe ################################################
 
-GG1 <- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/German_3000.txt", header=FALSE)
-GG2 <- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/German_3000B.txt", header=FALSE)
+GG1 <- read.csv("German_3000.txt", header=FALSE)
+GG2 <- read.csv("German_3000B.txt", header=FALSE)
 
 
-GG1 <- read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/German_3000.txt", header=FALSE)
-GG2 <- read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/German_3000B.txt", header=FALSE)
+GG1 <- read.csv("German_3000.txt", header=FALSE)
+GG2 <- read.csv("German_3000B.txt", header=FALSE)
 
 
 
@@ -920,14 +897,6 @@ UQA<-round(c(UQ_AVPL11,UQ_Dim11,UQ_T2,UQ_V3,UQ_V4,UQ_V5),3)
 
 data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=LQA,'UL'=UQA) 
 
-
-#     Stat Observed       Mean         s     Zm     LL    UL
-#     AVPL   11.989  11.783317  1.052763  0.195 -1.538 2.322
-# Diameter   31.000  28.901333  4.073655  0.515 -1.449 2.479
-#       T2   29.000  30.004000  6.253483 -0.161 -1.920 2.078
-#       V3  165.000 148.540667 34.905481  0.472 -1.749 2.148
-#       V4   22.000  22.360000  6.348433 -0.057 -1.632 2.306
-#       V5    9.000   5.716667  3.122641  1.051 -1.510 2.332
 
  
 ################################# ER and PA ###############################################
@@ -1154,32 +1123,6 @@ UQA<-round(c(UQ_AVPL11,UQ_Dim11,UQ_T2,UQ_V3,UQ_V4,UQ_V5),3)
 data.frame ('Stat'=Motif, 'Observed'=Ob_Occur, 'Mean'=Mean,'s'=sd1,'Zm'=Zm,'LL'=LQA,'UL'=UQA) 
 
 
-
-
-############ ER #######################
-
-
-#    Stat Observed      Mean          s     Zm     LL    UL
-#     AVPL   11.989  6.248849  0.1487396 38.590 -1.919 1.977
-# Diameter   31.000 14.689000  1.3206631 12.351 -1.279 2.507
-#       T2   29.000  2.787000  1.6712353 15.685 -1.668 1.937
-#       V3  165.000 20.824000 13.2140202 10.911 -1.576 2.359
-#       V4   22.000  5.189500  2.3998895  7.005 -1.746 2.004
-#       V5    9.000  0.055000  0.2449592 36.516 -0.225 3.858
-
-
-
-
-
-############ PA ######################################
-
-#     Stat Observed       Mean          s     Zm     LL    UL
-#     AVPL   11.989   5.628892  0.1135115 56.028 -1.777 2.084
-# Diameter   31.000  13.465500  1.0589478 16.558 -1.384 2.393
-#       T2   29.000  14.750000  3.7072054  3.844 -1.821 2.225
-#       V3  165.000 338.680000 96.9859822 -1.791 -1.729 2.189
-#       V4   22.000  37.893500  7.7753705 -2.044 -1.658 2.071
-#       V5    9.000   8.190000  5.0841739  0.159 -1.414 2.323
 
 
 
