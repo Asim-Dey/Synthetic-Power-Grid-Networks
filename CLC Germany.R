@@ -5,12 +5,12 @@ library(NetSwan)
 
 ############### Data #################################################
 
-data11 <- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/Export_Output22.csv")
-data11 <- read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/Export_Output22.csv")
+data11 <- read.csv("Export_Output22.csv")
+data11 <- read.csv("Export_Output22.csv")
 
 
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
+source('Pref_at_G.R')
+source('Pref_at_G.R')
 
 
 
