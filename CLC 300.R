@@ -5,11 +5,11 @@ library(EnvStats)
 
 
 ##############################IEEE 300 Bus system ##############################
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-Data_IEEE300<-read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
+Data_IEEE300<-read.csv("IEEE 300 Bus.csv",header=TRUE)
+Data_IEEE300<-read.csv("IEEE 300 Bus.csv",header=TRUE)
 
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
+source('~/Pref_at_G.R')
+source('~/Pref_at_G.R')
 
 #-----Remove duplicity -----------------------------------------------------------
 Edge_no_dup=unique(Data_IEEE300[,c(1,2)])
@@ -87,7 +87,7 @@ degree_Germany
 
 ####################################################################################################
 
-CLC10 <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Python/CLC simulated data/N_IEEE300_10.txt",header=TRUE)
+CLC10 <- read.table("N_IEEE300_10.txt",header=TRUE)
 
 CLC10<-as.matrix(CLC10)+1 # few nodes have level 0; changing them t 1
 
@@ -165,9 +165,5 @@ mean(KL12) # 0.3732128
 sd(KL12)  # 0.04992547
 
 
-## one parameter############
-#KL11<-c(0.337,0.347,0.395,0.336,0.485,0.381,0.364,0.466,0.334,0.359)
-#mean(KL11) # 0.3804
-#sd(KL11)  # 0.05409087
 
 
