@@ -15,14 +15,12 @@ library(EnvStats)
 ##############################IEEE 300 Bus system ##############################
 
 
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE_118_Bus.csv",header=TRUE)
-#Data_IEEE300<-read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE_118_Bus.csv",header=TRUE)
+Data_IEEE300<-read.csv("IEEE_118_Bus.csv",header=TRUE)
+#Data_IEEE300<-read.csv("IEEE_118_Bus.csv",header=TRUE)
 
 
 
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-
+source('Pref_at_G.R')
 
 
 #-----Remove duplicity -----------------------------------------------------------
