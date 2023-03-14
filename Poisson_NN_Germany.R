@@ -5,12 +5,8 @@ library(NetSwan)
 
 ############### Data #################################################
 
-data11 <- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/Export_Output22.csv")
-data11 <- read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/Export_Output22.csv")
-
-
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
+data11 <- read.csv("Export_Output22.csv")
+source('Pref_at_G.R')
 
 
 
@@ -104,7 +100,7 @@ degree_Germany
 
 ####################################################################################################
 
-CLC10 <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Python/Poisson simulated data/Germany_NN_10.txt",header=TRUE)
+CLC10 <- read.table("Germany_NN_10.txt",header=TRUE)
 
 CLC10<-as.matrix(CLC10)+1 # few nodes have level 0; changing them to 1
 
