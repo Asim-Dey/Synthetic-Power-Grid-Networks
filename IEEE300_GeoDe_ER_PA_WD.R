@@ -10,13 +10,8 @@ library(TDA)
 ##############################IEEE 300 Bus system ##############################
 
 
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-Data_IEEE300<-read.csv("C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-
-
-
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
+Data_IEEE300<-read.csv("IEEE 300 Bus.csv",header=TRUE)
+Data_IEEE300<-read.csv("IEEE 300 Bus.csv",header=TRUE)
 
 
 #-----Remove duplicity -----------------------------------------------------------
@@ -94,11 +89,6 @@ summary(as.numeric(A2))
 
 #=============================================================================
 
-setwd("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/")
-setwd("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B")
-
-
-
 ### Check matrix/weight values i.e., summary
 
 cap=2# dimension cap
@@ -162,8 +152,8 @@ PD=P
 #################################### GeoDe ################################################
 
 
-edge_list <- read.table("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE300_1.txt")
-edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE300_8.txt")
+edge_list <- read.table("edgelistIEEE300_1.txt")
+
 
 
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
@@ -195,14 +185,6 @@ summary(as.numeric(AA1))
 ######################################################################################
 #######################################################################################
 #######################################  TDA ################################################
-
-
-
-setwd("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B")
-#setwd("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B")
-
-
-
 
 AA1<-as.matrix(AA1)
 AA1[!is.finite(AA1)] <- 999
@@ -284,13 +266,6 @@ WD <- wasserstein(PD, P_GD, dimension = c(0,1))
 WD
 
 
-
-# 10.81818,13.04545, 11.72727, 14.54545, 12.63636
-
-## B:  13.02381, 11.61905, 14.52381, 11.61905, 13.04762,  
-
-
-
 ################################# ER and PA ###############################################
 ################################ Simulation ################################################################
 
@@ -330,14 +305,6 @@ summary(as.numeric(AA1))
 ######################################################################################
 #######################################################################################
 #######################################  TDA ################################################
-
-
-
-setwd("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B")
-#setwd("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B")
-
-
-
 
 AA1<-as.matrix(AA1)
 AA1[!is.finite(AA1)] <- 999
@@ -415,15 +382,4 @@ P_ER
 
 WD <- wasserstein(PD, P_ER, dimension = c(0,1))
 WD
-
-# ER: 10.36364, 13.63636, 10.90909, 16.36364, 15.27273
-# PA: 3.227273, 2.863636, 3.272727, 3.136364
-
-
-# ER B: 24.2381, 23.28571, 21.85714, 22.80952, 24.2381
-# PA B: 14.2381, 14.2381, 14.2381, 14.2381, 14.2381
-
-
-
-
 
