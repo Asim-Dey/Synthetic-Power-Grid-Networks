@@ -14,13 +14,8 @@ library(EnvStats)
 ##############################IEEE 300 Bus system ##############################
 
 
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-Data_IEEE300<-read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-
-
-
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
+Data_IEEE300<-read.csv("IEEE 300 Bus.csv",header=TRUE)
+source('Pref_at_G.R')
 
 
 #-----Remove duplicity -----------------------------------------------------------
@@ -181,9 +176,6 @@ legend("topright",  #cex=1.1, y.intersp=.9,
 ########################################################################################
 
 degree_Germany_N
-# 0.230000000 0.253333333 0.280000000 0.140000000 0.046666667 0.020000000 0.016666667
-# 0.006666667 0.003333333 0.000000000 0.003333333
-
 
 sim_1<-c(0, 44, 95, 82, 46, 27, 4, 2, 0, 1,0,0) # 0:10--0:12
 sim_2<-c(0, 45, 96, 79, 46, 20, 8, 4, 1,0,0,0);0:9
@@ -307,7 +299,6 @@ KLD
 
 ################################ Simulation ################################################################
 
-#source('C:/Users/asimi/Downloads/R codes/2020/Pref_at_G.R')
 set.seed(123)
 
 n=n_node
@@ -409,16 +400,13 @@ attach(D0)
 
 ######################################################################################################################
 
-D0PfA<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/A/Data/PA_IEEE300.csv")
-D0PfA<-read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/A/Data/PA_IEEE300.csv")
+D0PfA<-read.csv("PA_IEEE300.csv")
 dim(D0PfA)
 
-D0_ER<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/A/Data/ER_IEEE300.csv")
-D0_ER<-read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/A/Data/ER_IEEE300.csv")
+D0_ER<-read.csv("CER_IEEE300.csv")
 dim(D0_ER)
 
-D0GeoDe<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B/Data/IEEE300_200B.txt", header=FALSE)
-D0GeoDe<- read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/B/Data/IEEE300_200B.txt", header=FALSE)
+D0GeoDe<- read.csv("IEEE300_200B.txt", header=FALSE)
 dim(D0GeoDe)
 
 names(D0GeoDe)<-c("m", "t","nodes", "edges", "vee", "triangles", "path3", "square", 
