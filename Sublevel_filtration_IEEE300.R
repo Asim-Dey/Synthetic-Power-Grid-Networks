@@ -10,11 +10,8 @@ library(TDA)
 ##############################IEEE 300 Bus system ##############################
 
 
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-#Data_IEEE300<-read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/A/Data/IEEE 300 Bus.csv",header=TRUE)
-
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-#source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/A/Pref_at_G.R')
+Data_IEEE300<-read.csv("IEEE 300 Bus.csv",header=TRUE)
+source(Pref_at_G.R')
 
 
 #-----Remove duplicity -----------------------------------------------------------
@@ -69,21 +66,6 @@ n_edge<-length(E(G0));n_edge
 #
 
 ####################################################################################################################
-
-
-
-########################################
-# Examples of Sublevel and Power filtration on Networks
-# Original source codes from:
-# Cuneyt Gurcan Akcora and Ignacio Segovia-Dominguez
-########################################
-
-
-
-setwd('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/') 
-
-#setwd('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/') 
-options(java.parameters = "-Xmx200g") 
 
 
 ###### Parameters
@@ -208,16 +190,7 @@ PD
 #################################### poisNN ################################################
 
 
-#edge_list<-read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Python/Poisson simulated data/IEEE300_PoissonNN_10.txt",header=TRUE)
-
-#ED<-as.matrix(edge_list)+1 #  vertex of name sart with 0. So we add 1
-
-#n22<-dim(ED)[1];n22
-#W<-rnorm(as.numeric(n22),5,7)
-#DD11<-data.frame(ED,W)
-
-
-#write.table(DD11,"IEEE300_PoissonNN_10.txt", sep = "\t",row.names = FALSE,col.names = TRUE)
+edge_list<-read.table("IEEE300_PoissonNN_10.txt",header=TRUE)
 
 
 ###########################################################
@@ -335,25 +308,6 @@ PD_Sim
 WD <- wasserstein(PD, PD_Sim, dimension = c(0,1))
 WD
 
-####################################################
-
-# poisNN hub: 37.99335,47.18549 ,44.53237,  55.27763, 48.12679,46.95708, 49.9739, 58.45607 
-# poisNN eccentricity:  712, 721, 721, 637, 752, 663,  813.5, 745.5, 669, 827.5
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -363,7 +317,7 @@ WD
 #################################### CLC ################################################
 
 
-#edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Python/CLC simulated data/N_IEEE300_10.txt",header=TRUE)
+#edge_list <- read.table("N_IEEE300_10.txt",header=TRUE)
 
 ED<-as.matrix(edge_list)+1 #  vertex of name sart with 0. So we add 1
 
@@ -491,26 +445,6 @@ PD_Sim
 WD <- wasserstein(PD, PD_Sim, dimension = c(0,1))
 WD
 
-####################################################
-
-### Two parameter 
-# CLC hub:  29.59726,23.94265,29.31128,33.81334,33.75989,27.10568,38.43247, 28.31472
-# CLC eccentricity: 213, 404.5, 223.5, 234.5, 377.5, 345, 297.5, 229,211.5, 376.5
-
-
-
-### One parameter 
-# CLC hub:  19.30798,9.852413,23.593,17.029,23.260
-# CLC eccentricity: 220.532, 299.533, 247.532, 409.032,174.532
-
-
-
-
-# CLC Degree:       
-# CLC betweenness: 
-# CLC closeness:   
-
- 
 
 
 
@@ -525,8 +459,7 @@ WD
 
 
 
-#edge_list <- read.table("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE300_1.txt")
-edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE300_6.txt")
+#edge_list <- read.table("edgelistIEEE300_1.txt")
 
 
 
@@ -656,19 +589,6 @@ PD_Sim
 WD <- wasserstein(PD, PD_Sim, dimension = c(0,1))
 WD
 
-# 
-# GeoDe Degree:       301.5, 374,  368, 353.5, 363
-# GeoDe betweenness:  12.16582,  11.65484, 12.71054, 11.21288, 12.94173
-# GeoDe closeness:   0.945483, 0.5599269,  0.7984239, 0.8669957, 0.9174831
-# GeoDe eccentricity: 408.5,  465.5, 68.5, 312, 453.5
-# GeoDe hub:          5.230362, 11.06427,  6.43406, 3.967542, 4.240161
-
-
-
-
-
-
-
 
 
 
@@ -680,9 +600,7 @@ WD
 ################################# ER and PA ###############################################
 ################################ Simulation ################################################################
 
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-
+source('Pref_at_G.R')
 
 n=n_node
 m=n_edge
@@ -832,11 +750,6 @@ if(typeFiltration == 'subnodes'){ ###### Sublevel on Nodes
 
 
 
-
-
-
-
-
 ###### To show persistent Diagrams
 print(PD_ER)
 
@@ -848,30 +761,6 @@ PD_ER
 
 WD <- wasserstein(PD, PD_ER, dimension = c(0,1))
 WD
-
-
-
-#ER Degree:         133, 321, 316, 306.5, 228
-#ER betweenness:    14.14935, 12.58464, 12.70963, 12.77958, 14.07298
-# ER Closeness:     1.661531, 1.216975, 1.86038,  1.249909, 1.330589
-# ER eccentricity:  495.5, 470.5, 481.5, 555, 509.5
-# ER hub:            33.53718, 34.35302, 36.62647, 34.54533, 29.8837
-
-
-
-# PA Degree:       544, 321.5, 517.5, 508, 837.5
-# PA betweenness:  7.926248, 5.150593, 10.40006, 8.849849, 5.192771
-# PA Closeness:    2.81699, 2.753383, 2.69641, 2.656841, 2.72996
-# PA eccentricity:  523.5, 485, 525.5, 507.5, 510.5
-# PA hub:           40.59975, 38.77245, 28.31533, 30.65981, 26.75761
-
-
-
-# GeoDe Degree:       301.5, 374,  368, 353.5, 363
-# GeoDe betweenness:  12.16582,  11.65484, 12.71054, 11.21288, 12.94173
-# GeoDe closeness:   0.945483, 0.5599269,  0.7984239, 0.8669957, 0.9174831
-# GeoDe eccentricity: 408.5,  465.5, 68.5, 312, 453.5
-# GeoDe hub:          5.230362, 11.06427,  6.43406, 3.967542, 4.240161
 
 
 
