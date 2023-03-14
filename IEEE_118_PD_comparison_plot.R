@@ -236,7 +236,6 @@ plot(D10, barcode = TRUE, main = "Barcode")
 axis(2,at=c(75,  135),tick = FALSE,
      labels=c(expression(paste(H[0])), expression(paste(H[1]))),las=1)
 
-#-------------------------------------------
 
 plot(DiagRips22[["diagram"]],  main = "") #, band = 2 * band[["width"]]
 
