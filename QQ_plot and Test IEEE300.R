@@ -387,9 +387,6 @@ for(i in 1:B) {  #i=1
 
 dd<-data.frame(AVPL,Diameter,T2,V3,V4,V5)
 
-#write.csv(dd,"C:/Users/asimi/Downloads/R codes/2020/PA_IEEE300.csv")
-#write.csv(dd,"C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/D0ER.csv")
-
 D0<-read.csv("C:/Users/asimi/Downloads/R codes/2020/D0ER.csv")
 attach(D0)
 
