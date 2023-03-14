@@ -9,8 +9,7 @@ library(TDA)
 ##############################IEEE 118 Bus system ##############################
 
 
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE_118_Bus.csv",header=TRUE)
-#Data_IEEE300<-read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE_118_Bus.csv",header=TRUE)
+Data_IEEE300<-read.csv("IEEE_118_Bus.csv",header=TRUE)
 
 
 
@@ -25,7 +24,6 @@ W2<-rnorm(as.numeric(n33),5,7)
 DD22<-data.frame(IEEE_300_edge,W2)
 
 
-#write.table(DD22,"IEEE_edgetxt", sep = "\t",row.names = FALSE,col.names = TRUE)
 
 
 
@@ -69,27 +67,6 @@ n_edge<-length(E(G0));n_edge
 
 
 ###################################################################################################################
-
-
-
-########################################
-# Examples of Sublevel and Power filtration on Networks
-# Original source codes from:
-# Cuneyt Gurcan Akcora and Ignacio Segovia-Dominguez
-########################################
-
-
-
-setwd('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/') 
-
-#setwd('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/') 
-options(java.parameters = "-Xmx200g") 
-
-
-
-#write.table(IEEE_edge,"IEEE_edge.txt", sep = "\t",row.names = FALSE,col.names = TRUE)
-
-
 
 ###### Parameters
 # Three columns: [From   To   Weigth], we assume these are indirected graphs
@@ -210,16 +187,12 @@ PD
 #######################################################################################
 #################################### PoisNN ################################################
 
-#edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Python/Poisson simulated data/IEEE118_PoissonNN_1.txt",header=TRUE)
 
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
 
 n22<-dim(ED)[1];n22
 W<-rnorm(as.numeric(n22),5,7)
 DD11<-data.frame(ED,W)
-
-
-#write.table(DD11,"IEEE_edge_N_118_Pois_10.txt", sep = "\t",row.names = FALSE,col.names = TRUE)
 
 
 ###########################################################
@@ -364,16 +337,7 @@ WD
 #################################### GeoDe ################################################
 
 
-edge_list <- read.table("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE18.txt")
-edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE18.txt")
-
-
-
-
-
-
-
-
+edge_list <- read.table("edgelistIEEE18.txt")
 
 
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
@@ -517,9 +481,7 @@ WD
 ################################# ER and PA ###############################################
 ################################ Simulation ################################################################
 
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-
+source('Pref_at_G.R')
 
 n=n_node
 m=n_edge
