@@ -12,14 +12,10 @@ library(TDA)
 ##############################IEEE 300 Bus system ##############################
 
 
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE_118_Bus.csv",header=TRUE)
-#Data_IEEE300<-read.csv("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE_118_Bus.csv",header=TRUE)
+Data_IEEE300<-read.csv("IEEE_118_Bus.csv",header=TRUE)
 
 
-
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-#source('C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-
+source('Pref_at_G.R')
 
 
 #-----Remove duplicity -----------------------------------------------------------
@@ -167,11 +163,7 @@ L_p=(sum(abs(Land1-Land2)^p)/length(Land1))^(1/p)
 
 #################################### GeoDe ################################################
 
-
-edge_list <- read.table("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE18.txt")
-edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE18_9.txt")
-
-
+edge_list <- read.table("edgelistIEEE18.txt")
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
 
 G1<-graph_from_edgelist(ED,directed = FALSE)
