@@ -4,9 +4,7 @@ library(igraph)
 library(NetSwan)
 
 
-data11 <- read.csv("C:/Users/asimi/OneDrive/Power Grid Network/Data from author/processed/Export_Output22.csv")
-data11 <- read.csv("D:/02/Dropbox/Power Grid Network/Data from author/processed/Export_Output22.csv")
-summary(data11)
+data11 <- read.csv("Export_Output22.csv")
 
 
 country<-c("Italy")
@@ -57,9 +55,7 @@ n_edge<-length(E(G0));n_edge
 #################################### GeoDe Instance ################################################
 
 
-edge_list <- read.table("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistItaly_1.txt")
-edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistItaly_1.txt")
-
+edge_list <- read.table("edgelistItaly_1.txt")
 
 
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
@@ -159,27 +155,15 @@ Giant_Comp_APL<-data.frame(c(0,fr),c(GC_0,GC),c(AVPL_0,AVPL))
 colnames(Giant_Comp_APL) <- c("fr", "GC","APL") 
 
 
-write.csv(Giant_Comp_APL, paste0("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_Italy_GeoDe.csv"))
-
-
-
 
 #################################### Plots #####################################
 
 
-d0<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_Italy_Original.csv")
+d0<- read.csv("Giant_fr_Italy_Original.csv")
 head(d0)
 
-d0_GeoDE<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_Italy_GeoDe.csv")
+d0_GeoDE<- read.csv("Giant_fr_Italy_GeoDe.csv")
 head(d0_GeoDE)
-
-
-#d0_ER<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_IEEE300ER.csv")
-#head(d0_ER)
-
-
-#d0_PA<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_IEEE300PA.csv")
-#head(d0_PA)
 
 
 
@@ -193,11 +177,6 @@ lines(d0_GeoDE$fr,d0_GeoDE$GC/d0_GeoDE$GC[1],  pch = 17,lty=1,lwd=2,col='red')
 
 legend('topright',c("Observed", "GeoDe"),title="Italian power grid",
        lty=c(4,1,1,1),  lwd=c(2,2),  pch = c(NA,NA),col=c("black", "red")) 
-
-
-
-
-
 
 
 
