@@ -3,8 +3,7 @@ library(igraph)
 library(NetSwan)
 
 
-data11 <- read.csv("C:/Users/asimi/OneDrive/Power Grid Network/Data from author/processed/Export_Output22.csv")
-data11 <- read.csv("C:/Users/asim.kumer/OneDrive/Power Grid Network/Data from author/processed/Export_Output22.csv")
+data11 <- read.csv("Export_Output22.csv")
 
 
 summary(data11)
@@ -57,9 +56,7 @@ n_edge<-length(E(G0));n_edge
 #################################### GeoDe Instance ################################################
 
 
-edge_list <- read.table("C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistItaly_1.txt")
-edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistItaly_1.txt")
-
+edge_list <- read.table("edgelistItaly_1.txt")
 
 
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
@@ -178,24 +175,13 @@ motif_degree<-data.frame(Time,c(0,fr),c(Tot_V0,Tot_V),c(V1_0,V1),c(V2_0,V2),c(V3
 colnames(motif_degree) <- c("Time","fr","Tot_V", "V1", "V2", "V3", "V4", "V5", "C_V1", "C_V2", "C_V3", "C_V4", "C_V5") 
 
 
-
-write.csv(motif_degree, paste0("C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/MotifIItaly_Original_betweenness.csv"))
-
-write.csv(motif_degree, paste0("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/MotifIItaly_Original.csv"))
-
-
 #################################### Plots #####################################
 
 
-d0<- read.csv("C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/MotifIItaly_Original_betweenness.csv")
-d0<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/MotifIItaly_Original_betweenness.csv")
-head(d0)
+d0<- read.csv("MotifIItaly_Original_betweenness.csv")
 
 
-d0_GeoDE<- read.csv("C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/MotifIItaly_GeoDe_Betweenness.csv")
-d0_GeoDE<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/MotifIItaly_GeoDe_Betweenness.csv")
-head(d0_GeoDE)
-
+d0_GeoDE<- read.csv("MotifIItaly_GeoDe_Betweenness.csv")
 
 
 
@@ -217,26 +203,6 @@ lLab<-c(expression("Observed M"[3]),expression("GeoDe M"[3]), expression("Observ
 legend('topright', title="Italian power grid",legend=lLab,
        lty=c(4,1,4,1),  lwd=c(2,2,2,2),
        col=c("black","red","green","blue"))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
