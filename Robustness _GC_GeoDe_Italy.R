@@ -152,13 +152,6 @@ for(i in 1:n){       #i=5
 
 Giant_Comp_APL<-data.frame(c(0,fr),c(GC_0,GC),c(AVPL_0,AVPL))
 colnames(Giant_Comp_APL) <- c("fr", "GC","APL") 
-
-
-#write.csv(Giant_Comp_APL, paste0("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_Italy_GeoDe_Betweeness.csv"))
-
-
-
-
 #################################### Plots #####################################
 
 
@@ -182,11 +175,6 @@ lines(d0_GeoDE$fr,d0_GeoDE$GC/d0_GeoDE$GC[1],  pch = 17,lty=1,lwd=2,col='red')
 
 legend('topright',c("Observed", "GeoDe"),title="Italian power grid",
        lty=c(4,1,1,1),  lwd=c(2,2),  pch = c(NA,NA),col=c("black", "red")) 
-
-
-
-
-
 
 
 
