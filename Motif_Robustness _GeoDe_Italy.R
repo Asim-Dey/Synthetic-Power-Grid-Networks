@@ -3,9 +3,7 @@ library(igraph)
 library(NetSwan)
  
 
-data11 <- read.csv("C:/Users/asimi/OneDrive/Power Grid Network/Data from author/processed/Export_Output22.csv")
-data11 <- read.csv("D:/02/Dropbox/Power Grid Network/Data from author/processed/Export_Output22.csv")
-summary(data11)
+data11 <- read.csv("Export_Output22.csv")
 
  
 country<-c("Italy")
@@ -55,11 +53,7 @@ n_edge<-length(E(G0));n_edge
 #################################### GeoDe Instance ################################################
 
 
-edge_list <- read.table("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistItaly_1.txt")
-edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistItaly_1.txt")
-
-
-
+edge_list <- read.table("edgelistItaly_1.txt")
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
 
 G1<-graph_from_edgelist(ED,directed = FALSE)
@@ -175,20 +169,14 @@ colnames(motif_degree) <- c("Time","fr","Tot_V", "V1", "V2", "V3", "V4", "V5", "
 
 
 
-write.csv(motif_degree, paste0("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/MotifIItaly_GeoDe.csv"))
-
-
-
-
-
 
 #################################### Plots #####################################
 
 
-d0<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/MotifIItaly_Original.csv")
+d0<- read.csv("MotifIItaly_Original.csv")
 head(d0)
 
-d0_GeoDE<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/MotifIItaly_GeoDe.csv")
+d0_GeoDE<- read.csv("MotifIItaly_GeoDe.csv")
 head(d0_GeoDE)
 
 
