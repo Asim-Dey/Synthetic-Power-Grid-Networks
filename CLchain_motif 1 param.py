@@ -113,21 +113,7 @@ def CLC(degrees, diameter):
         
 ######################################################################################################            
 
- #import os
- #os.getcwd()
- #os.chdir("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Python/CLC simulated data")
- #os.chdir("C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/Python/CLC simulated data")
- #os.getcwd()
- 
- 
-#DD=CLC_defaults(300, dmean = 2.425, dstd = 0.1846)
-#DD
 
-
-#  IEEE 118: D-14, DD=[7 56 19 15 11  6  2  1  1], Edges-178
-#  IEEE 300: D-24, DD=[69 76 84 42 14  6  5  2  1  0  1], Edges-409
-#  Italy: D-28, DD=[54 84 68 33 21  7  3  3], Node-273, Edges-375
-#  Germany: D-31, DD=[121 123 120  34  25  15   3   2   1   1], Node-445, Edges-567
 
 
 trials=200
@@ -203,12 +189,9 @@ for t in range(trials):
 ## T2-Triangle; V3/M3-Tent; V4/M4-Square; V5/M5-kite 
 
 ######### saving in a matrix ###########
-#https://stackoverflow.com/questions/48314657/how-to-store-values-from-loop-to-a-dataframe
 
  #import os
- #os.getcwd()
- #os.chdir("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Python/CLC simulated data")
- #os.chdir("C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/Python/CLC simulated data")
+ #os.chdir("CLC simulated data")
  #os.getcwd()
  
  # matrix in a text file
