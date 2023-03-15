@@ -2,13 +2,10 @@
 
 ##############################IEEE 300 Bus system ##############################
 
-Data_IEEE300<-read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
-Data_IEEE300<-read.csv("C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Data/IEEE 300 Bus.csv",header=TRUE)
+Data_IEEE300<-read.csv("IEEE 300 Bus.csv",header=TRUE)
 
 
-
-source('C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
-source('C:/Users/asim.kumer/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Old/Pref_at_G.R')
+source('Pref_at_G.R')
 
 
 #-----Remove duplicity -----------------------------------------------------------
@@ -45,8 +42,7 @@ n_edge<-length(E(G0));n_edge
 #################################### GeoDe Instance ################################################
 
 
-edge_list <- read.table("C:/Users/akd130230/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE300_1.txt")
-edge_list <- read.table("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/Data/edgelistIEEE300_8.txt")
+edge_list <- read.table("edgelistIEEE300_1.txt")
 
 
 ED<-as.matrix(edge_list)+1 #  vertex of name start with 0. So we add 1
@@ -143,27 +139,16 @@ Giant_Comp_APL<-data.frame(c(0,fr),c(GC_0,GC),c(AVPL_0,AVPL))
 colnames(Giant_Comp_APL) <- c("fr", "GC","APL") 
 
 
-#write.csv(Giant_Comp_APL, paste0("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_IEEE300Original.csv"))
-
-
-
-
 #################################### Plots #####################################
 
 
-d0<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_IEEE300Original.csv")
+d0<- read.csv("Giant_fr_IEEE300Original.csv")
 head(d0)
 
-d0_GeoDE<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_IEEE300GeoDe.csv")
+d0_GeoDE<- read.csv("Giant_fr_IEEE300GeoDe.csv")
 head(d0_GeoDE)
 
 
-#d0_ER<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_IEEE300ER.csv")
-#head(d0_ER)
-
-
-#d0_PA<- read.csv("C:/Users/asimi/OneDrive/Synthentic Network/Random Graph Model/R codes/2020/Robustness motifs and others/GC Data/Giant_fr_IEEE300PA.csv")
-#head(d0_PA)
 
 
 
@@ -177,13 +162,5 @@ lines(d0_GeoDE$fr,d0_GeoDE$GC/d0_GeoDE$GC[1],  pch = 17,lty=1,lwd=2,col='red')
 
 legend('topright',c("Observed", "GeoDe"), title="IEEE 300",
        lty=c(4,1),  lwd=c(2,2),  pch = c(NA,NA),col=c("black", "red")) 
-
-
-
-
-
-
- 
-
 
 
