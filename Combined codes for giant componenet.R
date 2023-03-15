@@ -4,9 +4,7 @@
 library(igraph)  
 library(NetSwan)
 
-data11 <- read.csv("C:/Users/akd130230/Desktop/Projects/Power Grid Network/Data from author/processed/Export_Output22.csv")
-data11 <- read.csv("C:/Users/asimi/OneDrive/Power Grid Network/Data from author/processed/Export_Output22.csv")
-summary(data11)
+data11 <- read.csv("Export_Output22.csv")
 
 
 country<-c("Italy","Germany","Spain","Poland","France")
@@ -93,8 +91,6 @@ Network<-rep(country[j],(n+1))
 Giant_Comp<-data.frame(c(0,fr),c(GC_0,GC),Network)
 colnames(Giant_Comp) <- c("fr", "GC","Network") 
 
-
-#write.csv(Giant_Comp, paste0("C:/Users/akd130230/Desktop/Projects/Power Grid Network/Data and R codes/Robustness motifs and others/GC Data/","GC_Btw_",country[j],".csv"))
 
 }
 
